@@ -4,7 +4,8 @@ require('dotenv').config();
 
 
 
-const database = new pg.Client(process.env.STRING_ELEPHANT);
+
+const database = new pg.Client('postgres://bvwkfpsi:B-GfAxhsSWr6aDYnfwCwv0a70GvotF9t@silly.db.elephantsql.com/bvwkfpsi');
 
 database.connect((erro) =>{
     if(erro){

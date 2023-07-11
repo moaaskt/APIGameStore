@@ -50,8 +50,8 @@ exports.deletarAdmin = (req, res) => {
 
 exports.cadastrarGame = (req, res) => {
     const novoGame = req.body
-    const query = 'INSERT INTO GAMES(nome,descricao, preco, plataforma) VALUES ($1, $2,$3,$4)'
-    const values = [novoGame.nome, novoGame.descricao, novoGame.preco, novoGame.plataforma]
+    const query = 'INSERT INTO GAMES(nome,descricao, preco, plataforma,url_jogo) VALUES ($1, $2,$3,$4,$5)'
+    const values = [novoGame.nome, novoGame.descricao, novoGame.preco, novoGame.plataforma, novoGame.url_jogo]
 
     database.query(query, values).then(() => {
         res.status(200).send({ mensagem: 'Produto inserido!' })
@@ -88,8 +88,8 @@ exports.atualizarGame = (req, res) => {
 
 exports.cadastrarUsuario = (req, res) => {
     const novoUser = req.body
-    const query = 'INSERT INTO USUARIOS(nome,cpf,email) VALUES ($1, $2,$3)'
-    const values = [novoUser.nome, novoUser.cpf, novoUser.email]
+    const query = 'INSERT INTO USUARIOS(nome,cpf,email,senha) VALUES ($1, $2,$3,$4)'
+    const values = [novoUser.nome, novoUser.cpf, novoUser.email,novoUser.senha]
 
     database.query(query, values).then(() => {
         res.status(200).send({ mensagem: 'Usuário cadastrado com sucesso!' })
@@ -109,6 +109,37 @@ exports.cadastrarAdmin = (req, res) => {
         res.status(500).send({ erro: erro })
     })
 }
+
+exports.login = (req, res) => {
+    const { email, senha } = req.body;
+  
+    // Consulte o banco de dados para encontrar o usuário com o email fornecido
+    const query = 'SELECT * FROM ADMIN WHERE email = $1';
+    const values = [email];
+  
+    database.query(query, values)
+      .then((result) => {
+        const user = result.rows[0];
+  
+        // Verifique se o usuário existe
+        if (!user) {
+          res.status(404).json({ mensagem: 'Usuário não encontrado' });
+          return;
+        }
+  
+        // Verifique se a senha fornecida coincide com a senha armazenada no banco de dados
+        if (senha === user.senha) {
+          // Autenticação bem-sucedida
+          res.status(200).json({ mensagem: 'Login bem-sucedido', token: 'TOKEN_AQUI', isAdmin: user.isAdmin });
+        } else {
+          // Senha incorreta
+          res.status(401).json({ mensagem: 'Senha incorreta' });
+        }
+      })
+      .catch((erro) => {
+        res.status(500).json({ erro: erro });
+      });
+  };
 
 exports.buscarJogo = (req, res) => {
     const { nome, precoMin, precoMax, plataforma } = req.query;
