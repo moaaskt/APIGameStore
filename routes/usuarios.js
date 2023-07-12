@@ -10,6 +10,7 @@ router.get("/admin", controlBuscarDados.listarAdmins);
 router.get("/users", controlBuscarDados.listarUsers);
 router.post("/cadastrarGames", controlBuscarDados.cadastrarGame);
 router.post("/cadastrarUsers", controlBuscarDados.cadastrarUsuario);
+router.post("/login", controlBuscarDados.login);
 router.post("/cadastrarAdmin", controlBuscarDados.cadastrarAdmin);
 router.delete("/deletargame/:id", controlBuscarDados.deletarGame);
 router.delete("/deletarAdmin/:id", controlBuscarDados.deletarAdmin);

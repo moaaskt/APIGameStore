@@ -114,8 +114,8 @@ exports.login = (req, res) => {
     const { email, senha } = req.body;
   
     // Consulte o banco de dados para encontrar o usuário com o email fornecido
-    const query = 'SELECT * FROM ADMIN WHERE email = $1';
-    const values = [email];
+    const query = 'SELECT * FROM ADMIN WHERE email = $3 senha = $4';
+    const values = [email,senha];
   
     database.query(query, values)
       .then((result) => {
