@@ -39,9 +39,107 @@
   <li>Execute o projeto:</li>
 </ol>
 
-<pre><code>npm start</code></pre>
+<pre><code>node server.js</code></pre>
 
 <p>Acesse o aplicativo em <a href="http://localhost:4000">http://localhost:4000</a>.</p>
+
+## Exemplo de uso:
+
+A seguir, estão detalhadas as rotas disponíveis na API, juntamente com exemplos de como utilizá-las para interagir com o sistema de gerenciamento de jogos, usuários e administradores.
+
+### Listar Todos os Usuários:
+
+```http
+GET /listar-users
+```
+Esta rota retorna uma lista de todos os usuários cadastrados no sistema.
+
+
+### Cadastrar um Novo Usuário:
+
+```http
+POST /cadastrar-usuario
+```
+Envie um JSON no corpo da solicitação contendo os detalhes do usuário para criar um novo registro.
+
+
+### Atualizar Informações de um Usuário:
+
+```http
+PUT /atualizar-usuario/:id
+```
+Substitua :id pelo ID do usuário que deseja atualizar e envie um JSON no corpo da solicitação com os novos detalhes.
+
+
+### Remover um Usuário:
+
+```http
+DELETE /deletar-usuario/:id
+```
+Substitua :id pelo ID do usuário que deseja excluir.
+
+### Listar Todos os Jogos:
+
+```http
+GET /listar-games
+```
+Esta rota retorna uma lista de todos os jogos cadastrados no sistema.
+
+### Cadastrar um Novo Jogo:
+
+```http
+POST /cadastrar-game
+```
+Envie um JSON no corpo da solicitação contendo os detalhes do jogo para criar um novo registro.
+
+### Atualizar Informações de um Jogo:
+
+```http
+PUT /atualizar-game/:id
+```
+Substitua :id pelo ID do jogo que deseja atualizar e envie um JSON no corpo da solicitação com os novos detalhes.
+
+### Remover um Jogo:
+
+```http
+DELETE /deletar-game/:id
+```
+Substitua :id pelo ID do jogo que deseja excluir.
+
+### Listar Todos os Administradores:
+
+```http
+GET /listar-admins
+```
+Esta rota retorna uma lista de todos os administradores cadastrados no sistema.
+
+### Cadastrar um Novo Administrador:
+
+```http
+POST /cadastrar-admin
+```
+Envie um JSON no corpo da solicitação contendo os detalhes do administrador para criar um novo registro.
+
+### Autenticar um Administrador (Realizar Login):
+
+```http
+POST /login
+```
+Envie um JSON no corpo da solicitação contendo o email e a senha do administrador para autenticação. Se as credenciais estiverem corretas, um token 
+de autenticação será retornado.
+
+### Buscar Jogos por Critérios:
+```http
+GET /buscar-jogo?nome=<nome>&precoMin=<precoMin>&precoMax=<precoMax>&plataforma=<plataforma>
+```
+Substitua os parâmetros <nome>, <precoMin>, <precoMax> e <plataforma> pelos critérios desejados para buscar jogos específicos.
+
+### Buscar Jogos por Plataforma:
+```http
+GET /buscar-por-plataforma/:plataforma
+```
+Substitua :plataforma pela plataforma desejada para buscar jogos relacionados a essa plataforma.
+
 
 <h2>Contribuição</h2>
 
