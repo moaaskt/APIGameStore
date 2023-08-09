@@ -1,17 +1,31 @@
+# GameStore - API E-commerce de Games</h1>
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-<h1>GameStore - API E-commerce de Games</h1>
 
 
-<p>A GameStore é uma loja virtual de vendas de jogos para todas as plataformas.</p>
+## Visão Geral
 
+Bem-vindo à API de Gerenciamento de Jogos e Usuários! Esta API oferece funcionalidades para cadastrar, atualizar, buscar e excluir jogos, usuários e administradores. Com ela, você pode facilmente interagir com um sistema de gerenciamento de jogos e usuários de forma eficiente.
 
-<h2>Recursos</h2>
+## Recursos
 
-<ul>
-  <li>Recurso 1: </li>
-  <li>Recurso 2: </li>
-  <!-- Adicione mais recursos se necessário -->
-</ul>
+- Cadastre e gerencie jogos, usuários e administradores.
+- Realize buscas personalizadas por critérios como nome, preço e plataforma.
+- Autentique administradores para controle seguro das operações.
+
+## Documentação da API
+
+Para saber como utilizar as rotas e recursos desta API, consulte a [Documentação da API](https://link-para-documentacao-api).
+
+## Tecnologias Utilizadas
+
+- Node.js
+- Express.js
+- Banco de Dados (Nome do Banco de Dados)
+- Outras bibliotecas e dependências (se necessário)
+
+## Status do Desenvolvimento
+
+Este projeto encontra-se em desenvolvimento ativo. Novos recursos, melhorias e correções estão sendo implementados regularmente para oferecer uma experiência mais completa e robusta.
 
 <h2>Instalação</h2>
 
@@ -153,10 +167,14 @@ Substitua :plataforma pela plataforma desejada para buscar jogos relacionados a 
   <li>Crie um novo Pull Request.</li>
 </ol>
 
-<h2>Licença</h2>
-
-<p>Este projeto está licenciado sob a <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
-
 <h2>Contato</h2>
 
 <p>Se você tiver alguma dúvida ou sugestão em relação a este projeto, entre em contato no <a href="mailto:moacirneto59@gmail.com">E-mail</a>.</p>
+
+# Licença
+
+Este projeto está licenciado sob a <a href="https://opensource.org/licenses/MIT">MIT License</a><br>
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
+---
